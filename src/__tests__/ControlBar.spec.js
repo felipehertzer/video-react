@@ -1,42 +1,50 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import ControlBar from '../components/control-bar/ControlBar.jsx'
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import ControlBar from '../components/control-bar/ControlBar';
 
 describe('ControlBar', () => {
-  it('should render with "div" tag', () => {
-    const wrapper = shallow(
-      <ControlBar
-        actions={{}}
-        player={{
-          hasStarted: false,
-        }}
-      />,
-    )
+    it('should render with "div" tag', () => {
+        const { container } = render(
+            <ControlBar
+                actions={{}}
+                player={{
+                    hasStarted: false,
+                }}
+            />
+        );
 
-    expect(wrapper.type()).toBe('div')
-  })
+        // Check if the container's first child is a div
+        const divElement = container.firstChild;
+        expect(divElement?.nodeName.toLowerCase()).toBe('div');
+    });
 
-  it('should render with "video-react-control-bar" class', () => {
-    const wrapper = shallow(
-      <ControlBar
-        actions={{}}
-        player={{
-          hasStarted: false,
-        }}
-      />,
-    )
-    expect(wrapper.hasClass('video-react-control-bar')).toBe(true)
-  })
+    it('should render with "video-react-control-bar" class', () => {
+        render(
+            <ControlBar
+                actions={{}}
+                player={{
+                    hasStarted: false,
+                }}
+            />
+        );
 
-  it('should has more than 1 children', () => {
-    const wrapper = shallow(
-      <ControlBar
-        actions={{}}
-        player={{
-          hasStarted: false,
-        }}
-      />,
-    )
-    expect(wrapper.children().length).toBeGreaterThan(0)
-  })
-})
+        // Check if the control bar has the expected class
+        const controlBarElement = screen.getByRole('group'); // or use container.querySelector('.video-react-control-bar')
+        expect(controlBarElement).toHaveClass('video-react-control-bar');
+    });
+
+    it('should have more than 1 child', () => {
+        const { container } = render(
+            <ControlBar
+                actions={{}}
+                player={{
+                    hasStarted: false,
+                }}
+            />
+        );
+
+        // Check if there are multiple children
+        const controlBarElement = container.firstChild;
+        expect(controlBarElement?.childElementCount).toBeGreaterThan(0);
+    });
+});

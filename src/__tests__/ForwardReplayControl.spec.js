@@ -1,20 +1,21 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import ForwardReplayControl from '../components/control-bar/ForwardReplayControl.jsx'
+import React from 'react';
+import { render } from '@testing-library/react';
+import ForwardReplayControl from '../components/control-bar/ForwardReplayControl';
 
 describe('ForwardReplayControl', () => {
   it('should render with "button" tag', () => {
-    const Forwardontrol = ForwardReplayControl('forward')
-    const wrapper = shallow(<Forwardontrol actions={{}} player={{}} />)
+    const ForwardControl = ForwardReplayControl('forward');
+    const { container } = render(<ForwardControl actions={{}} player={{}} />);
 
-    expect(wrapper.type()).toBe('button')
-  })
+    const buttonElement = container.querySelector('button');
+    expect(buttonElement).toBeInTheDocument();
+  });
 
   it('should render with "video-react-control video-react-button" class', () => {
-    const Forwardontrol = ForwardReplayControl('forward')
-    const wrapper = shallow(<Forwardontrol actions={{}} player={{}} />)
-    expect(wrapper.hasClass('video-react-control video-react-button')).toBe(
-      true,
-    )
-  })
-})
+    const ForwardControl = ForwardReplayControl('forward');
+    const { container } = render(<ForwardControl actions={{}} player={{}} />);
+
+    const buttonElement = container.querySelector('button.video-react-control.video-react-button');
+    expect(buttonElement).toBeInTheDocument();
+  });
+});

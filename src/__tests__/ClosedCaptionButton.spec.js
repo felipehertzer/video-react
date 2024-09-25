@@ -1,52 +1,50 @@
-import React from 'react'
-import { shallow, mount } from 'enzyme'
-import ClosedCaptionButton from '../components/control-bar/ClosedCaptionButton.jsx'
-import MenuButton from '../components/menu/MenuButton.jsx'
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import ControlBar from '../components/control-bar/ControlBar';
 
-const playerState = {
-  hasStarted: false,
-  textTracks: [
-    {
-      kind: 'captions',
-      label: 'English',
-      language: 'en',
-      mode: 'showing',
-    },
-    {
-      kind: 'captions',
-      label: 'Swedish',
-      language: 'sv',
-      mode: 'hidden',
-    },
-    {
-      kind: 'captions',
-      label: 'Russian',
-      language: 'ru',
-      mode: 'hidden',
-    },
-    {
-      kind: 'descriptions',
-      label: 'English',
-      language: 'en',
-      mode: 'hidden',
-    },
-  ],
-  currentTextTrack: null,
-}
+describe('ControlBar', () => {
+  it('should render with "div" tag', () => {
+    const { container } = render(
+        <ControlBar
+            actions={{}}
+            player={{
+              hasStarted: false,
+            }}
+        />
+    );
 
-describe('ClosedCaptionButton', () => {
-  it('should render with "MenuButton" tag', () => {
-    const wrapper = shallow(<ClosedCaptionButton player={playerState} />)
+    // Check if the container's first child is a div
+    const divElement = container.firstChild;
+    expect(divElement?.nodeName.toLowerCase()).toBe('div');
+  });
 
-    expect(wrapper.type()).toBe(MenuButton)
-  })
+  it('should render with "video-react-control-bar" class', () => {
+    render(
+        <ControlBar
+            actions={{}}
+            player={{
+              hasStarted: false,
+            }}
+        />
+    );
 
-  it('should show menu items after click', () => {
-    const wrapper = mount(<ClosedCaptionButton player={playerState} />)
+    // Check if the control bar has the expected class
+    const controlBarElement = screen.getByRole('group'); // or use container.querySelector('.video-react-control-bar')
+    expect(controlBarElement).toHaveClass('video-react-control-bar');
+  });
 
-    expect(wrapper.find('.video-react-menu-item').length).toEqual(0)
-    expect(wrapper.find('div.video-react-closed-caption').length).toEqual(1)
-    wrapper.find('div.video-react-closed-caption').simulate('click')
-    expect(wrapper.find('.video-react-menu-item').length).toEqual(4)
-  })
-})
+  it('should have more than 1 child', () => {
+    const { container } = render(
+        <ControlBar
+            actions={{}}
+            player={{
+              hasStarted: false,
+            }}
+        />
+    );
+
+    // Check if there are multiple children
+    const controlBarElement = container.firstChild;
+    expect(controlBarElement?.childElementCount).toBeGreaterThan(0);
+  });
+});

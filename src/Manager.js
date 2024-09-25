@@ -1,11 +1,15 @@
-import { createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 import reducer from './reducers'
 import * as playerActions from './actions/player'
 import * as videoActions from './actions/video'
 
 export default class Manager {
   constructor(store) {
-    this.store = store || createStore(reducer)
+    this.store =
+      store ||
+      configureStore({
+        reducer: reducer,
+      })
 
     this.video = null
     this.rootElement = null
@@ -21,7 +25,6 @@ export default class Manager {
 
     function bindActionCreator(actionCreator) {
       return function bindAction() {
-        // eslint-disable-next-line prefer-rest-params
         const action = actionCreator.apply(manager, arguments)
         if (typeof action !== 'undefined') {
           dispatch(action)

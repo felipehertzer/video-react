@@ -1,42 +1,50 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import LoadingSpinner from '../components/LoadingSpinner.jsx'
+import React from 'react';
+import { render } from '@testing-library/react';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 describe('LoadingSpinner', () => {
-  it('should render null with error', () => {
-    const wrapper = shallow(
-      <LoadingSpinner
-        player={{
-          error: true,
-        }}
-      />,
-    )
-    expect(wrapper.type()).toBe(null)
-  })
+    it('should render null when there is an error', () => {
+        const { container } = render(
+            <LoadingSpinner
+                player={{
+                    error: true,
+                }}
+            />
+        );
 
-  it('should render "div" tag with seeking or waiting', () => {
-    const wrapper = shallow(
-      <LoadingSpinner
-        player={{
-          hasStarted: true,
-          seeking: true,
-          waiting: true,
-        }}
-      />,
-    )
-    expect(wrapper.type()).toBe('div')
-  })
+        // Ensure that nothing is rendered when there's an error
+        expect(container.firstChild).toBeNull();
+    });
 
-  it('should render with "video-react-loading-spinner" class', () => {
-    const wrapper = shallow(
-      <LoadingSpinner
-        player={{
-          hasStarted: true,
-          seeking: true,
-          waiting: true,
-        }}
-      />,
-    )
-    expect(wrapper.hasClass('video-react-loading-spinner')).toBe(true)
-  })
-})
+    it('should render "div" tag with seeking or waiting', () => {
+        const { container } = render(
+            <LoadingSpinner
+                player={{
+                    hasStarted: true,
+                    seeking: true,
+                    waiting: true,
+                }}
+            />
+        );
+
+        // Check if the rendered element is a div
+        const divElement = container.querySelector('div');
+        expect(divElement).toBeInTheDocument();
+    });
+
+    it('should render with "video-react-loading-spinner" class', () => {
+        const { container } = render(
+            <LoadingSpinner
+                player={{
+                    hasStarted: true,
+                    seeking: true,
+                    waiting: true,
+                }}
+            />
+        );
+
+        // Check if the div has the class "video-react-loading-spinner"
+        const divElement = container.querySelector('div.video-react-loading-spinner');
+        expect(divElement).toBeInTheDocument();
+    });
+});

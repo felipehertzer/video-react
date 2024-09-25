@@ -1,4 +1,4 @@
-import React, { ReactEventHandler, ReactNode } from 'react'
+import React, { type ReactEventHandler, type ReactNode } from 'react'
 
 declare module 'video-react' {
   type PreloadType = 'auto' | 'metadata' | 'none'

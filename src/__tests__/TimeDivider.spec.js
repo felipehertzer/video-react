@@ -1,15 +1,21 @@
-import React from 'react'
-import { shallow, mount } from 'enzyme'
-import TimeDivider from '../components/time-controls/TimeDivider.jsx'
+import React from 'react';
+import { render } from '@testing-library/react';
+import TimeDivider from '../components/time-controls/TimeDivider';
 
 describe('TimeDivider', () => {
-  it('should render with "div" tag', () => {
-    const wrapper = mount(<TimeDivider separator="-" />)
-    expect(wrapper.find('div.video-react-time-divider').length).toBe(1)
-  })
+  it('should render with "div" tag and correct class', () => {
+    const { container } = render(<TimeDivider separator="-" />);
 
-  it('should has more than 1 children', () => {
-    const wrapper = shallow(<TimeDivider separator=":" />)
-    expect(wrapper.children().length).toBeGreaterThan(0)
-  })
-})
+    // Check if a div with the class "video-react-time-divider" is rendered
+    const divElement = container.querySelector('div.video-react-time-divider');
+    expect(divElement).toBeInTheDocument();
+  });
+
+  it('should have more than 1 child', () => {
+    const { container } = render(<TimeDivider separator=":" />);
+
+    // Check if the component has children
+    const divElement = container.querySelector('div.video-react-time-divider');
+    expect(divElement?.children.length).toBeGreaterThan(0);
+  });
+});

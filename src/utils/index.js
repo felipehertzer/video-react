@@ -1,7 +1,6 @@
 import React from 'react'
 
 // NaN is the only value in javascript which is not equal to itself.
-// eslint-disable-next-line no-self-compare
 const isNaN = Number.isNaN || ((value) => value !== value)
 
 /**
@@ -117,7 +116,6 @@ export function mergeAndSortChildren(
  * Temporary utility for generating the warnings
  */
 export function deprecatedWarning(oldMethodCall, newMethodCall) {
-  // eslint-disable-next-line no-console
   console.warn(
     `WARNING: ${oldMethodCall} will be deprecated soon! Please use ${newMethodCall} instead.`,
   )
@@ -127,7 +125,6 @@ export function throttle(callback, limit) {
   let wait = false
   return () => {
     if (!wait) {
-      // eslint-disable-next-line prefer-rest-params
       callback(...arguments)
       wait = true
       setTimeout(() => {

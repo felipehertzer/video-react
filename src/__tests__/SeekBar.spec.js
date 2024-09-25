@@ -1,40 +1,45 @@
-import React from 'react'
-import { shallow, mount } from 'enzyme'
-import SeekBar from '../components/control-bar/SeekBar.jsx'
+import React from 'react';
+import { render } from '@testing-library/react';
+import SeekBar from '../components/control-bar/SeekBar';
 
 describe('SeekBar', () => {
-  it('should render with "div" tag', () => {
-    const wrapper = mount(
-      <SeekBar
-        actions={{}}
-        player={{
-          duration: 200,
-          currentTime: 50,
-        }}
-        mouseTime={{
-          time: 100,
-          position: 0,
-        }}
-      />,
-    )
+    it('should render with "div" tag', () => {
+        const { container } = render(
+            <SeekBar
+                actions={{}}
+                player={{
+                    duration: 200,
+                    currentTime: 50,
+                }}
+                mouseTime={{
+                    time: 100,
+                    position: 0,
+                }}
+            />
+        );
 
-    expect(wrapper.find('div.video-react-slider').length).toBe(1)
-  })
+        // Check if a div with the class "video-react-slider" is rendered
+        const divElement = container.querySelector('div.video-react-slider');
+        expect(divElement).toBeInTheDocument();
+    });
 
-  it('should render with "video-react-progress-holder" class', () => {
-    const wrapper = shallow(
-      <SeekBar
-        actions={{}}
-        player={{
-          duration: 200,
-          currentTime: 50,
-        }}
-        mouseTime={{
-          time: 100,
-          position: 0,
-        }}
-      />,
-    )
-    expect(wrapper.hasClass('video-react-progress-holder')).toBe(true)
-  })
-})
+    it('should render with "video-react-progress-holder" class', () => {
+        const { container } = render(
+            <SeekBar
+                actions={{}}
+                player={{
+                    duration: 200,
+                    currentTime: 50,
+                }}
+                mouseTime={{
+                    time: 100,
+                    position: 0,
+                }}
+            />
+        );
+
+        // Check if the div has the class "video-react-progress-holder"
+        const divElement = container.querySelector('div.video-react-progress-holder');
+        expect(divElement).toBeInTheDocument();
+    });
+});

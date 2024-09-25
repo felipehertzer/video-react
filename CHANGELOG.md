@@ -1,3 +1,39 @@
+# 0.17.0 (2024-09-25)
+
+
+### Bug Fixes
+
+* add missing @babel/runtim ([7ff1036](https://github.com/video-react/video-react/commit/7ff103696f64a6e424efc98d7010c9549437aab2))
+* add tabindex to video tag to make it focusable in latest Chrome ([#262](https://github.com/video-react/video-react/issues/262)) ([01291c7](https://github.com/video-react/video-react/commit/01291c709bc6d8ae5d2c322f508e0d181d10a5b0))
+* assets path ([#221](https://github.com/video-react/video-react/issues/221)) ([64ac208](https://github.com/video-react/video-react/commit/64ac208b6a260117105df4a72bdfa953b7472515))
+* bad seek time on iOS safari ([19efac4](https://github.com/video-react/video-react/commit/19efac48fd7c3cdce5d499b529c0f0a81c52d99e))
+* Build dist before build docs ([85a11dd](https://github.com/video-react/video-react/commit/85a11dd48ef4e6bd8c354930ee009e3b31931054))
+* Fixed clickable issue ([9a9a218](https://github.com/video-react/video-react/commit/9a9a21886408ba13aa8647ef83f1a9720b20c8ec))
+* keep CNAME ([aa7dd7e](https://github.com/video-react/video-react/commit/aa7dd7efedd9d0f859c1b34c6aa51720ef51758e))
+* re-focus to root element when switching fullscreen ([#276](https://github.com/video-react/video-react/issues/276)) ([3e38a7f](https://github.com/video-react/video-react/commit/3e38a7f133bdd14e427e5a0f393ef0ab9a9f667a))
+* removed a dubious player state setting that caused LoadSpinner invisible problem ([363a659](https://github.com/video-react/video-react/commit/363a659219bfe734726a14238e029d3882fae0f0))
+* **Slider:** remove event listeners when component will unmount ([17baf50](https://github.com/video-react/video-react/commit/17baf5014b029db545009a2a95815088dc95abaa))
+* test, build, dep issues ([#459](https://github.com/video-react/video-react/issues/459)) ([eea57bb](https://github.com/video-react/video-react/commit/eea57bbce305d670a84450bff3ac3454144525e1))
+
+
+### Features
+
+* Add property to disable click for shortcut [#101](https://github.com/video-react/video-react/issues/101) ([e29aee8](https://github.com/video-react/video-react/commit/e29aee8321891bb63ea24ee7ad36c7f0f3622a22)), closes [#122](https://github.com/video-react/video-react/issues/122)
+* expose MenuButton ([ed835a2](https://github.com/video-react/video-react/commit/ed835a2038eb07ed2a220b4027198d2c9f9a0278))
+* New ClosedCaptionButton component ([6bea3a1](https://github.com/video-react/video-react/commit/6bea3a138d44a1a72dc6f39400929e99a4826e4c))
+
+
+### Reverts
+
+* Revert "Add files via upload" ([40e8e27](https://github.com/video-react/video-react/commit/40e8e27bd8a0fed7c8ec7faa0fa2b5ff515f4599))
+* Revert "Update README.md" ([529a6b0](https://github.com/video-react/video-react/commit/529a6b0cd2053669275e4859562f53af9f6cbcba))
+* Revert "Fixed the promise error" ([cc47027](https://github.com/video-react/video-react/commit/cc470274a5004d0e739f1d594ea62897600cd940))
+* Revert "Merge pull request #26 from yuheiy/support-ie11" ([57b6c53](https://github.com/video-react/video-react/commit/57b6c53b382ced1928e6d454fa2a43c0dd3acc52)), closes [#26](https://github.com/video-react/video-react/issues/26)
+* Revert "Remove yarn.lock" ([b5053b5](https://github.com/video-react/video-react/commit/b5053b5c8417fec998d12463471be4ccad24228d))
+* Revert "Fixed PR issue" ([b26ede5](https://github.com/video-react/video-react/commit/b26ede5bfc784130fec4989607256e83124d4a5c))
+
+
+
 <a name="0.16.0"></a>
 # [0.16.0](https://github.com/video-react/video-react/compare/0.15.0...0.16.0) (2022-11-09)
 

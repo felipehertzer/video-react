@@ -1,30 +1,35 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import PosterImage from '../components/PosterImage.jsx'
+import React from 'react';
+import { render } from '@testing-library/react';
+import PosterImage from '../components/PosterImage';
 
 describe('PosterImage', () => {
-  it('should render with "div" tag', () => {
-    const wrapper = shallow(
-      <PosterImage
-        poster="poster.png"
-        player={{
-          hasStarted: false,
-        }}
-      />,
-    )
+    it('should render as a "div" tag', () => {
+        const { container } = render(
+            <PosterImage
+                poster="poster.png"
+                player={{
+                    hasStarted: false,
+                }}
+            />
+        );
 
-    expect(wrapper.type()).toBe('div')
-  })
+        // Check if the rendered element is a div
+        const divElement = container.querySelector('div');
+        expect(divElement).toBeInTheDocument();
+    });
 
-  it('should render with "video-react-poster" class', () => {
-    const wrapper = shallow(
-      <PosterImage
-        poster="poster.png"
-        player={{
-          hasStarted: false,
-        }}
-      />,
-    )
-    expect(wrapper.hasClass('video-react-poster')).toBe(true)
-  })
-})
+    it('should render with "video-react-poster" class', () => {
+        const { container } = render(
+            <PosterImage
+                poster="poster.png"
+                player={{
+                    hasStarted: false,
+                }}
+            />
+        );
+
+        // Check if the div has the "video-react-poster" class
+        const divElement = container.querySelector('div.video-react-poster');
+        expect(divElement).toBeInTheDocument();
+    });
+});

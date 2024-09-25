@@ -1,44 +1,61 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import ReplayControl from '../components/control-bar/ReplayControl.jsx'
+import React from 'react';
+import { render } from '@testing-library/react';
+import ReplayControl from '../components/control-bar/ReplayControl';
 
 describe('ReplayControl', () => {
   it('should render with "button" tag', () => {
-    const wrapper = shallow(<ReplayControl actions={{}} player={{}} />)
+    const { container } = render(<ReplayControl actions={{}} player={{}} />);
 
-    expect(wrapper.type()).toBe('button')
-  })
+    // Check if the rendered element is a button
+    const buttonElement = container.querySelector('button');
+    expect(buttonElement).toBeInTheDocument();
+  });
 
   it('should render with "video-react-button" class', () => {
-    const wrapper = shallow(<ReplayControl actions={{}} player={{}} />)
-    expect(wrapper.hasClass('video-react-button')).toBe(true)
-  })
+    const { container } = render(<ReplayControl actions={{}} player={{}} />);
+
+    // Check if the button has the "video-react-button" class
+    const buttonElement = container.querySelector('button.video-react-button');
+    expect(buttonElement).toBeInTheDocument();
+  });
 
   it('should render with "video-react-replay-control" class', () => {
-    const wrapper = shallow(
-      <ReplayControl mode="replay" actions={{}} player={{}} />,
-    )
-    expect(wrapper.hasClass('video-react-replay-control')).toBe(true)
-  })
+    const { container } = render(
+        <ReplayControl mode="replay" actions={{}} player={{}} />
+    );
+
+    // Check if the button has the "video-react-replay-control" class
+    const buttonElement = container.querySelector('button.video-react-replay-control');
+    expect(buttonElement).toBeInTheDocument();
+  });
 
   it('should render with "video-react-icon-replay-5" class for replay 5 seconds', () => {
-    const wrapper = shallow(
-      <ReplayControl seconds={5} actions={{}} player={{}} />,
-    )
-    expect(wrapper.hasClass('video-react-icon-replay-5')).toBe(true)
-  })
+    const { container } = render(
+        <ReplayControl seconds={5} actions={{}} player={{}} />
+    );
+
+    // Check if the button has the "video-react-icon-replay-5" class
+    const buttonElement = container.querySelector('button.video-react-icon-replay-5');
+    expect(buttonElement).toBeInTheDocument();
+  });
 
   it('should render with "video-react-icon-replay-10" class for replay 10 seconds', () => {
-    const wrapper = shallow(
-      <ReplayControl seconds={10} actions={{}} player={{}} />,
-    )
-    expect(wrapper.hasClass('video-react-icon-replay-10')).toBe(true)
-  })
+    const { container } = render(
+        <ReplayControl seconds={10} actions={{}} player={{}} />
+    );
+
+    // Check if the button has the "video-react-icon-replay-10" class
+    const buttonElement = container.querySelector('button.video-react-icon-replay-10');
+    expect(buttonElement).toBeInTheDocument();
+  });
 
   it('should render with "video-react-icon-replay-30" class for replay 30 seconds', () => {
-    const wrapper = shallow(
-      <ReplayControl seconds={30} actions={{}} player={{}} />,
-    )
-    expect(wrapper.hasClass('video-react-icon-replay-30')).toBe(true)
-  })
-})
+    const { container } = render(
+        <ReplayControl seconds={30} actions={{}} player={{}} />
+    );
+
+    // Check if the button has the "video-react-icon-replay-30" class
+    const buttonElement = container.querySelector('button.video-react-icon-replay-30');
+    expect(buttonElement).toBeInTheDocument();
+  });
+});
