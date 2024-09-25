@@ -1,3 +1,3 @@
-import '../styles/scss/video-react.scss';
+import '../styles/scss/video-react.scss'
 
-export * from './index';
+export * from './index'

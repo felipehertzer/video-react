@@ -1,33 +1,33 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import classNames from 'classnames'
 
 const propTypes = {
   item: PropTypes.object,
   index: PropTypes.number,
   activateIndex: PropTypes.number,
-  onSelectItem: PropTypes.func
-};
+  onSelectItem: PropTypes.func,
+}
 
 export default class MenuItem extends Component {
   constructor(props, context) {
-    super(props, context);
+    super(props, context)
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
-    const { index, onSelectItem } = this.props;
-    onSelectItem(index);
+    const { index, onSelectItem } = this.props
+    onSelectItem(index)
   }
 
   render() {
-    const { item, index, activateIndex } = this.props;
+    const { item, index, activateIndex } = this.props
     return (
       <li
         className={classNames({
           'video-react-menu-item': true,
-          'video-react-selected': index === activateIndex
+          'video-react-selected': index === activateIndex,
         })}
         role="menuitem"
         onClick={this.handleClick}
@@ -35,9 +35,9 @@ export default class MenuItem extends Component {
         {item.label}
         <span className="video-react-control-text" />
       </li>
-    );
+    )
   }
 }
 
-MenuItem.propTypes = propTypes;
-MenuItem.displayName = 'MenuItem';
+MenuItem.propTypes = propTypes
+MenuItem.displayName = 'MenuItem'

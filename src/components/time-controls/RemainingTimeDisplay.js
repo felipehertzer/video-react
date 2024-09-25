@@ -1,25 +1,25 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types'
+import React from 'react'
+import classNames from 'classnames'
 
-import { formatTime } from '../../utils';
+import { formatTime } from '../../utils'
 
 const propTypes = {
   player: PropTypes.object,
-  className: PropTypes.string
-};
+  className: PropTypes.string,
+}
 
 function RemainingTimeDisplay({
   player: { currentTime, duration },
-  className
+  className,
 }) {
-  const remainingTime = duration - currentTime;
-  const formattedTime = formatTime(remainingTime);
+  const remainingTime = duration - currentTime
+  const formattedTime = formatTime(remainingTime)
   return (
     <div
       className={classNames(
         'video-react-remaining-time video-react-time-control video-react-control',
-        className
+        className,
       )}
     >
       <div className="video-react-remaining-time-display" aria-live="off">
@@ -27,10 +27,10 @@ function RemainingTimeDisplay({
         {`-${formattedTime}`}
       </div>
     </div>
-  );
+  )
 }
 
-RemainingTimeDisplay.propTypes = propTypes;
-RemainingTimeDisplay.displayName = 'RemainingTimeDisplay';
+RemainingTimeDisplay.propTypes = propTypes
+RemainingTimeDisplay.displayName = 'RemainingTimeDisplay'
 
-export default RemainingTimeDisplay;
+export default RemainingTimeDisplay

@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import classNames from 'classnames';
-import Menu from './Menu';
-import MenuItem from './MenuItem';
-import ClickableComponent from '../ClickableComponent';
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import classNames from 'classnames'
+import Menu from './Menu'
+import MenuItem from './MenuItem'
+import ClickableComponent from '../ClickableComponent'
 
 const propTypes = {
   inline: PropTypes.bool,
@@ -11,154 +11,154 @@ const propTypes = {
   className: PropTypes.string,
   onSelectItem: PropTypes.func,
   children: PropTypes.any,
-  selectedIndex: PropTypes.number
-};
+  selectedIndex: PropTypes.number,
+}
 
 export default class MenuButton extends Component {
   constructor(props, context) {
-    super(props, context);
+    super(props, context)
 
     this.state = {
       active: false,
-      activateIndex: props.selectedIndex || 0
-    };
+      activateIndex: props.selectedIndex || 0,
+    }
 
-    this.commitSelection = this.commitSelection.bind(this);
-    this.activateMenuItem = this.activateMenuItem.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.renderMenu = this.renderMenu.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleUpArrow = this.handleUpArrow.bind(this);
-    this.handleDownArrow = this.handleDownArrow.bind(this);
-    this.handleEscape = this.handleEscape.bind(this);
-    this.handleReturn = this.handleReturn.bind(this);
-    this.handleTab = this.handleTab.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.handleSelectItem = this.handleSelectItem.bind(this);
-    this.handleIndexChange = this.handleIndexChange.bind(this);
+    this.commitSelection = this.commitSelection.bind(this)
+    this.activateMenuItem = this.activateMenuItem.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+    this.renderMenu = this.renderMenu.bind(this)
+    this.handleFocus = this.handleFocus.bind(this)
+    this.handleBlur = this.handleBlur.bind(this)
+    this.handleUpArrow = this.handleUpArrow.bind(this)
+    this.handleDownArrow = this.handleDownArrow.bind(this)
+    this.handleEscape = this.handleEscape.bind(this)
+    this.handleReturn = this.handleReturn.bind(this)
+    this.handleTab = this.handleTab.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.handleSelectItem = this.handleSelectItem.bind(this)
+    this.handleIndexChange = this.handleIndexChange.bind(this)
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.selectedIndex !== this.props.selectedIndex) {
-      this.activateMenuItem(this.props.selectedIndex);
+      this.activateMenuItem(this.props.selectedIndex)
     }
   }
 
   commitSelection(index) {
     this.setState({
-      activateIndex: index
-    });
-    this.handleIndexChange(index);
+      activateIndex: index,
+    })
+    this.handleIndexChange(index)
   }
 
   activateMenuItem(index) {
     this.setState({
-      activateIndex: index
-    });
-    this.handleIndexChange(index);
+      activateIndex: index,
+    })
+    this.handleIndexChange(index)
   }
 
   handleIndexChange(index) {
-    const { onSelectItem } = this.props;
-    onSelectItem(index);
+    const { onSelectItem } = this.props
+    onSelectItem(index)
   }
 
   handleClick() {
-    this.setState(prevState => ({
-      active: !prevState.active
-    }));
+    this.setState((prevState) => ({
+      active: !prevState.active,
+    }))
   }
 
   handleFocus() {
-    document.addEventListener('keydown', this.handleKeyPress);
+    document.addEventListener('keydown', this.handleKeyPress)
   }
 
   handleBlur() {
     this.setState({
-      active: false
-    });
-    document.removeEventListener('keydown', this.handleKeyPress);
+      active: false,
+    })
+    document.removeEventListener('keydown', this.handleKeyPress)
   }
 
   handleUpArrow(e) {
-    const { items } = this.props;
+    const { items } = this.props
     if (this.state.active) {
-      e.preventDefault();
-      let newIndex = this.state.activateIndex - 1;
+      e.preventDefault()
+      let newIndex = this.state.activateIndex - 1
       if (newIndex < 0) {
-        newIndex = items.length ? items.length - 1 : 0;
+        newIndex = items.length ? items.length - 1 : 0
       }
-      this.activateMenuItem(newIndex);
+      this.activateMenuItem(newIndex)
     }
   }
 
   handleDownArrow(e) {
-    const { items } = this.props;
+    const { items } = this.props
     if (this.state.active) {
-      e.preventDefault();
-      let newIndex = this.state.activateIndex + 1;
+      e.preventDefault()
+      let newIndex = this.state.activateIndex + 1
       if (newIndex >= items.length) {
-        newIndex = 0;
+        newIndex = 0
       }
-      this.activateMenuItem(newIndex);
+      this.activateMenuItem(newIndex)
     }
   }
 
   handleTab(e) {
     if (this.state.active) {
-      e.preventDefault();
-      this.commitSelection(this.state.activateIndex);
+      e.preventDefault()
+      this.commitSelection(this.state.activateIndex)
     }
   }
 
   handleReturn(e) {
-    e.preventDefault();
+    e.preventDefault()
     if (this.state.active) {
-      this.commitSelection(this.state.activateIndex);
+      this.commitSelection(this.state.activateIndex)
     } else {
       this.setState({
-        active: true
-      });
+        active: true,
+      })
     }
   }
 
   handleEscape() {
     this.setState({
       active: false,
-      activateIndex: 0
-    });
+      activateIndex: 0,
+    })
   }
 
   handleKeyPress(event) {
     // Escape (27) key
     if (event.which === 27) {
-      this.handleEscape(event);
+      this.handleEscape(event)
     } else if (event.which === 9) {
       // Tab (9) key
-      this.handleTab(event);
+      this.handleTab(event)
     } else if (event.which === 13) {
       // Enter (13) key
-      this.handleReturn(event);
+      this.handleReturn(event)
     } else if (event.which === 38) {
       // Up (38) key
-      this.handleUpArrow(event);
+      this.handleUpArrow(event)
     } else if (event.which === 40) {
       // Down (40) key press
-      this.handleDownArrow(event);
+      this.handleDownArrow(event)
     }
   }
 
   handleSelectItem(i) {
-    this.commitSelection(i);
+    this.commitSelection(i)
   }
 
   renderMenu() {
     if (!this.state.active) {
-      return null;
+      return null
     }
 
-    const { items } = this.props;
+    const { items } = this.props
     return (
       <Menu>
         {items.map((item, i) => (
@@ -171,11 +171,11 @@ export default class MenuButton extends Component {
           />
         ))}
       </Menu>
-    );
+    )
   }
 
   render() {
-    const { inline, className } = this.props;
+    const { inline, className } = this.props
 
     return (
       <ClickableComponent
@@ -184,14 +184,14 @@ export default class MenuButton extends Component {
           {
             'video-react-menu-button-inline': !!inline,
             'video-react-menu-button-popup': !inline,
-            'video-react-menu-button-active': this.state.active
+            'video-react-menu-button-active': this.state.active,
           },
-          'video-react-control video-react-button video-react-menu-button'
+          'video-react-control video-react-button video-react-menu-button',
         )}
         role="button"
         tabIndex="0"
         ref={(c) => {
-          this.menuButton = c;
+          this.menuButton = c
         }}
         onClick={this.handleClick}
         onFocus={this.handleFocus}
@@ -200,9 +200,9 @@ export default class MenuButton extends Component {
         {this.props.children}
         {this.renderMenu()}
       </ClickableComponent>
-    );
+    )
   }
 }
 
-MenuButton.propTypes = propTypes;
-MenuButton.displayName = 'MenuButton';
+MenuButton.propTypes = propTypes
+MenuButton.displayName = 'MenuButton'

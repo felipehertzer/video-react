@@ -1,37 +1,35 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types'
+import React from 'react'
+import classNames from 'classnames'
 
 const propTypes = {
   poster: PropTypes.string,
   player: PropTypes.object,
   actions: PropTypes.object,
-  className: PropTypes.string
-};
+  className: PropTypes.string,
+}
 
-function PosterImage({
-  poster, player, actions, className
-}) {
+function PosterImage({ poster, player, actions, className }) {
   if (!poster || player.hasStarted) {
-    return null;
+    return null
   }
 
   return (
     <div
       className={classNames('video-react-poster', className)}
       style={{
-        backgroundImage: `url("${poster}")`
+        backgroundImage: `url("${poster}")`,
       }}
       onClick={() => {
         if (player.paused) {
-          actions.play();
+          actions.play()
         }
       }}
     />
-  );
+  )
 }
 
-PosterImage.propTypes = propTypes;
-PosterImage.displayName = 'PosterImage';
+PosterImage.propTypes = propTypes
+PosterImage.displayName = 'PosterImage'
 
-export default PosterImage;
+export default PosterImage

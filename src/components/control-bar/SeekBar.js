@@ -1,32 +1,32 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import classNames from 'classnames'
 
-import Slider from '../Slider';
-import PlayProgressBar from './PlayProgressBar';
-import LoadProgressBar from './LoadProgressBar';
-import MouseTimeDisplay from './MouseTimeDisplay';
-import { formatTime } from '../../utils';
+import Slider from '../Slider'
+import PlayProgressBar from './PlayProgressBar'
+import LoadProgressBar from './LoadProgressBar'
+import MouseTimeDisplay from './MouseTimeDisplay'
+import { formatTime } from '../../utils'
 
 const propTypes = {
   player: PropTypes.object,
   mouseTime: PropTypes.object,
   actions: PropTypes.object,
-  className: PropTypes.string
-};
+  className: PropTypes.string,
+}
 
 export default class SeekBar extends Component {
   constructor(props, context) {
-    super(props, context);
+    super(props, context)
 
-    this.getPercent = this.getPercent.bind(this);
-    this.getNewTime = this.getNewTime.bind(this);
-    this.stepForward = this.stepForward.bind(this);
-    this.stepBack = this.stepBack.bind(this);
+    this.getPercent = this.getPercent.bind(this)
+    this.getNewTime = this.getNewTime.bind(this)
+    this.stepForward = this.stepForward.bind(this)
+    this.stepBack = this.stepBack.bind(this)
 
-    this.handleMouseDown = this.handleMouseDown.bind(this);
-    this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.handleMouseUp = this.handleMouseUp.bind(this);
+    this.handleMouseDown = this.handleMouseDown.bind(this)
+    this.handleMouseMove = this.handleMouseMove.bind(this)
+    this.handleMouseUp = this.handleMouseUp.bind(this)
   }
 
   componentDidMount() {}
@@ -40,65 +40,65 @@ export default class SeekBar extends Component {
    * @method getPercent
    */
   getPercent() {
-    const { currentTime, seekingTime, duration } = this.props.player;
-    const time = seekingTime || currentTime;
-    const percent = time / duration;
-    return percent >= 1 ? 1 : percent;
+    const { currentTime, seekingTime, duration } = this.props.player
+    const time = seekingTime || currentTime
+    const percent = time / duration
+    return percent >= 1 ? 1 : percent
   }
 
   getNewTime(event) {
     const {
-      player: { duration }
-    } = this.props;
-    const distance = this.slider.calculateDistance(event);
-    const newTime = distance * duration;
+      player: { duration },
+    } = this.props
+    const distance = this.slider.calculateDistance(event)
+    const newTime = distance * duration
 
     // Don't let video end while scrubbing.
-    return newTime === duration ? newTime - 0.1 : newTime;
+    return newTime === duration ? newTime - 0.1 : newTime
   }
 
   handleMouseDown() {}
 
   handleMouseUp(event) {
-    const { actions } = this.props;
-    const newTime = this.getNewTime(event);
+    const { actions } = this.props
+    const newTime = this.getNewTime(event)
     // Set new time (tell video to seek to new time)
-    actions.seek(newTime);
-    actions.handleEndSeeking(newTime);
+    actions.seek(newTime)
+    actions.handleEndSeeking(newTime)
   }
 
   handleMouseMove(event) {
-    const { actions } = this.props;
-    const newTime = this.getNewTime(event);
-    actions.handleSeekingTime(newTime);
+    const { actions } = this.props
+    const newTime = this.getNewTime(event)
+    actions.handleSeekingTime(newTime)
   }
 
   stepForward() {
-    const { actions } = this.props;
-    actions.forward(5);
+    const { actions } = this.props
+    actions.forward(5)
   }
 
   stepBack() {
-    const { actions } = this.props;
-    actions.replay(5);
+    const { actions } = this.props
+    actions.replay(5)
   }
 
   render() {
     const {
       player: { currentTime, seekingTime, duration, buffered },
-      mouseTime
-    } = this.props;
-    const time = seekingTime || currentTime;
+      mouseTime,
+    } = this.props
+    const time = seekingTime || currentTime
 
     return (
       <Slider
-        ref={input => {
-          this.slider = input;
+        ref={(input) => {
+          this.slider = input
         }}
         label="video progress bar"
         className={classNames(
           'video-react-progress-holder',
-          this.props.className
+          this.props.className,
         )}
         valuenow={(this.getPercent() * 100).toFixed(2)}
         valuetext={formatTime(time, duration)}
@@ -117,9 +117,9 @@ export default class SeekBar extends Component {
         <MouseTimeDisplay duration={duration} mouseTime={mouseTime} />
         <PlayProgressBar currentTime={time} duration={duration} />
       </Slider>
-    );
+    )
   }
 }
 
-SeekBar.propTypes = propTypes;
-SeekBar.displayName = 'SeekBar';
+SeekBar.propTypes = propTypes
+SeekBar.displayName = 'SeekBar'

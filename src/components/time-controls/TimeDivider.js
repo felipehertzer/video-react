@@ -1,19 +1,19 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types'
+import React from 'react'
+import classNames from 'classnames'
 
 const propTypes = {
   separator: PropTypes.string,
-  className: PropTypes.string
-};
+  className: PropTypes.string,
+}
 
 export default function TimeDivider({ separator, className }) {
-  const separatorText = separator || '/';
+  const separatorText = separator || '/'
   return (
     <div
       className={classNames(
         'video-react-time-control video-react-time-divider',
-        className
+        className,
       )}
       dir="ltr"
     >
@@ -21,8 +21,8 @@ export default function TimeDivider({ separator, className }) {
         <span>{separatorText}</span>
       </div>
     </div>
-  );
+  )
 }
 
-TimeDivider.propTypes = propTypes;
-TimeDivider.displayName = 'TimeDivider';
+TimeDivider.propTypes = propTypes
+TimeDivider.displayName = 'TimeDivider'

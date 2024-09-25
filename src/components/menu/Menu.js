@@ -1,19 +1,19 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 
 const propTypes = {
-  children: PropTypes.any
-};
+  children: PropTypes.any,
+}
 
 export default class Menu extends Component {
   constructor(props, context) {
-    super(props, context);
+    super(props, context)
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(event) {
-    event.preventDefault();
+    event.preventDefault()
     // event.stopPropagation();
   }
 
@@ -26,9 +26,9 @@ export default class Menu extends Component {
       >
         <ul className="video-react-menu-content">{this.props.children}</ul>
       </div>
-    );
+    )
   }
 }
 
-Menu.propTypes = propTypes;
-Menu.displayName = 'Menu';
+Menu.propTypes = propTypes
+Menu.displayName = 'Menu'
