@@ -91,7 +91,7 @@ Interested in making contribution to this project? Want to report a bug? Please 
 
 ## Inspiration & Credits
 
-- This project is heavily inspired by [video.js](http://www.videojs.com), and most of our css styles came from [video.js's styles](https://github.com/videojs/video.js/tree/master/src/css).
+- This project is heavily inspired by [video.jsx](http://www.videojs.com), and most of our css styles came from [video.jsx's styles](https://github.com/videojs/video.js/tree/master/src/css).
 - The document site is built with [reactstrap](https://github.com/reactstrap/reactstrap).
 - All the icons came from [Google Material Icons](https://material.io/icons/)
 - Fonts were built by [iconmon](https://icomoon.io/).

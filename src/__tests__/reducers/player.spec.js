@@ -1,5 +1,5 @@
 import deepFreeze from 'deep-freeze'
-import player from '../../reducers/player'
+import player from '../../reducers/player.jsx'
 import {
   LOAD_START,
   CAN_PLAY,
@@ -17,12 +17,12 @@ import {
   VOLUME_CHANGE,
   PROGRESS_CHANGE,
   RATE_CHANGE,
-} from '../../actions/video'
+} from '../../actions/video.jsx'
 import {
   FULLSCREEN_CHANGE,
   PLAYER_ACTIVATE,
   USER_ACTIVATE,
-} from '../../actions/player'
+} from '../../actions/player.jsx'
 
 // Helper function to deep freeze state and action objects
 const deepFreezeState = (state, action) => {

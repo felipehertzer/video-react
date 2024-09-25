@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import reducer from './reducers'
-import * as playerActions from './actions/player'
-import * as videoActions from './actions/video'
+import reducer from './reducers/index.jsx'
+import * as playerActions from './actions/player.jsx'
+import * as videoActions from './actions/video.jsx'
 
 export default class Manager {
   constructor(store) {

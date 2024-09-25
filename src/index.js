@@ -29,9 +29,9 @@ import TimeDivider from './components/time-controls/TimeDivider.jsx'
 
 import MenuButton from './components/menu/MenuButton.jsx'
 
-import * as playerActions from './actions/player'
-import * as videoActions from './actions/video'
-import { playerReducer, operationReducer } from './reducers'
+import * as playerActions from './actions/player.jsx'
+import * as videoActions from './actions/video.jsx'
+import { playerReducer, operationReducer } from './reducers/index.jsx'
 
 export {
   Player,

@@ -1,11 +1,9 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import ForwardControlExample from '../examples/ForwardControl.jsx'
 
-const ForwardControlExampleSource = require('!!raw-loader!../examples/ForwardControl.jsx')
+import ForwardControlExampleSource from '../examples/ForwardControl.jsx?raw'
 
 export default class ForwardControlPage extends React.Component {
   render() {

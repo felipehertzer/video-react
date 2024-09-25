@@ -1,11 +1,10 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0, react/prefer-stateless-function: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
 import { Table, Alert } from 'reactstrap'
 import Helmet from 'react-helmet'
 import ShortcutExample from '../examples/Shortcut.jsx'
 
-const ShortcutExampleSource = require('!!raw-loader!../examples/Shortcut.jsx')
+import ShortcutExampleSource from '../examples/Shortcut.jsx?raw'
 
 export default class ShortcutPage extends React.Component {
   render() {

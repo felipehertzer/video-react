@@ -1,4 +1,4 @@
-import { OPERATE } from '../actions/player'
+import { OPERATE } from '../actions/player.jsx'
 
 const initialState = {
   count: 0,

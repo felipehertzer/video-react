@@ -1,11 +1,9 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import CustomizeSourceExample from '../examples/CustomizeSource.jsx'
-const CustomizeSourceExampleSource = require('!!raw-loader!../examples/CustomizeSource.jsx')
-const HLSSourceSource = require('!!raw-loader!../examples/HLSSource.jsx')
+import CustomizeSourceExampleSource from '../examples/CustomizeSource.jsx?raw'
+import HLSSourceSource from '../examples/HLSSource.jsx?raw'
 
 export default class CustomizeSourcePage extends React.Component {
   render() {

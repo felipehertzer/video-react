@@ -45,26 +45,25 @@ const config = {
   mode: env,
   devtool: 'source-map',
   devServer: {
-    inline: false,
-    disableHostCheck: true,
-    contentBase: './build',
+    static: {
+      directory: path.resolve(__dirname, 'build'), // Correct static config
+    },
     historyApiFallback: true,
     host: '0.0.0.0',
-    port: 9000,
-    stats: {
-      chunks: false,
+    port: 9005,
+    client: {
+      logging: 'info', // Control client-side logs
+      overlay: true, // Enables an overlay for runtime errors
     },
   },
-  entry: ['@babel/polyfill', './docs/lib/app'],
-  node: {
-    fs: 'empty',
-  },
+  entry: ['@babel/polyfill', './docs/lib/app.jsx'],
   output: {
     filename: 'bundle.js',
     path: path.resolve('./build'),
     libraryTarget: 'umd',
     library: 'VideoReact',
   },
+  // Removed the `node` option that is causing the error
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -103,6 +102,11 @@ const config = {
             plugins: ['@babel/plugin-proposal-object-rest-spread'],
           },
         },
+      },
+      {
+        test: /\.jsx$/,
+        use: 'raw-loader',
+        include: path.resolve(__dirname, 'src/examples'), // Path to where your examples are located
       },
       {
         test: /\.css$/,
@@ -183,4 +187,4 @@ const config = {
   },
 }
 
-module.exports = config
+export default config

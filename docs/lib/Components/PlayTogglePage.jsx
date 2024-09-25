@@ -1,10 +1,8 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import PlayToggleExample from '../examples/PlayToggle.jsx'
-const PlayToggleExampleSource = require('!!raw-loader!../examples/PlayToggle.jsx')
+import PlayToggleExampleSource from '../examples/PlayToggle.jsx?raw'
 
 export default class PlayTogglePage extends React.Component {
   render() {

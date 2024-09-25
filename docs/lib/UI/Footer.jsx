@@ -25,7 +25,8 @@ export default () => {
               <a
                 href="https://js.org"
                 target="_blank"
-                title="JS.ORG | JavaScript Community" rel="noreferrer"
+                title="JS.ORG | JavaScript Community"
+                rel="noreferrer"
               >
                 <img
                   src="https://logo.js.org/dark_horz.png"

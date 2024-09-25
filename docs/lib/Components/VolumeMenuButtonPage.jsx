@@ -1,10 +1,8 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import VolumeMenuButtonExample from '../examples/VolumeMenuButton.jsx'
-const VolumeMenuButtonExampleSource = require('!!raw-loader!../examples/VolumeMenuButton.jsx')
+import VolumeMenuButtonExampleSource from '../examples/VolumeMenuButton.jsx?raw'
 
 export default class VolumeMenuButtonPage extends React.Component {
   render() {

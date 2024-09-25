@@ -1,10 +1,8 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import LoadingSpinnerExample from '../examples/LoadingSpinner.jsx'
-const LoadingSpinnerExampleSource = require('!!raw-loader!../examples/LoadingSpinner.jsx')
+import LoadingSpinnerExampleSource from '../examples/LoadingSpinner.jsx?raw'
 
 export default class LoadingSpinnerPage extends React.Component {
   render() {

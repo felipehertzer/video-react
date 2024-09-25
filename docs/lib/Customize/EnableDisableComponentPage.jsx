@@ -1,10 +1,8 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import EnableDisableComponentExample from '../examples/EnableDisableComponent.jsx'
-const EnableDisableComponentExampleSource = require('!!raw-loader!../examples/EnableDisableComponent.jsx')
+import EnableDisableComponentExampleSource from '../examples/EnableDisableComponent.jsx?raw'
 
 export default class EnableDisableComponentPage extends React.Component {
   render() {

@@ -1,11 +1,9 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import ReplayControlExample from '../examples/ReplayControl.jsx'
 
-const ReplayControlExampleSource = require('!!raw-loader!../examples/ReplayControl.jsx')
+import ReplayControlExampleSource from '../examples/ReplayControl.jsx?raw'
 
 export default class ReplayControlPage extends React.Component {
   render() {

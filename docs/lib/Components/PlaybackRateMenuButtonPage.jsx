@@ -1,10 +1,8 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import PlaybackRateMenuButtonExample from '../examples/PlaybackRateMenuButton.jsx'
-const PlaybackRateMenuButtonExampleSource = require('!!raw-loader!../examples/PlaybackRateMenuButton.jsx')
+import PlaybackRateMenuButtonExampleSource from '../examples/PlaybackRateMenuButton.jsx?raw'
 
 export default class PlaybackRateMenuButtonPage extends React.Component {
   render() {

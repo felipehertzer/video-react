@@ -1,10 +1,9 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
 import Helmet from 'react-helmet'
 import PlayerWithCaptions from '../examples/PlayerWithCaptions.jsx'
 
-const PlayerWithCaptionsSource = require('!!raw-loader!../examples/PlayerWithCaptions.jsx')
+import PlayerWithCaptionsSource from '../examples/PlayerWithCaptions.jsx?raw'
 
 export default function CaptionedVideoPage() {
   return (

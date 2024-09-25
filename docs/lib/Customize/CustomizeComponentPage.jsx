@@ -1,11 +1,9 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import CustomizeComponentExample from '../examples/CustomizeComponentExample.jsx'
-const DownloadButtonSource = require('!!raw-loader!../examples/DownloadButton.jsx')
-const CustomizeComponentExampleSource = require('!!raw-loader!../examples/CustomizeComponentExample.jsx')
+import DownloadButtonSource from '../examples/DownloadButton.jsx?raw'
+import CustomizeComponentExampleSource from '../examples/CustomizeComponentExample.jsx?raw'
 
 export default class CustomizeComponentPage extends React.Component {
   render() {

@@ -1,15 +1,18 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button, Container, Row, Col, Jumbotron } from 'reactstrap'
-import { Link } from 'react-router'
+import { Button, Container, Row, Col } from 'reactstrap'
+import { Link } from 'react-router-dom'
 import BasicExample from '../examples/import-basic.jsx'
 
-const importBasic = require('!!raw-loader!../examples/import-basic.jsx')
+import importBasic from '../examples/import-basic.jsx?raw'
 
 export default () => {
   return (
     <div>
-      <Jumbotron tag="section" className="jumbotron-header text-center mb-3">
+      <section
+        className="jumbotron-header text-center mb-3"
+        style={{ padding: '2rem 1rem', backgroundColor: '#f8f9fa' }}
+      >
         <Container>
           <Row>
             <Col>
@@ -36,7 +39,7 @@ export default () => {
             </Col>
           </Row>
         </Container>
-      </Jumbotron>
+      </section>
       <Container fluid>
         <Row>
           <Col sm={{ size: 8, offset: 2 }}>
@@ -57,14 +60,13 @@ export default () => {
             <p>import css in your app or add video-react styles in your page</p>
             <pre>
               <PrismCode className="language-jsx">
-                import "node_modules/video-react/dist/video-react.css"; //
-                import css
+                import "node_modules/video-react/dist/video-react.css"; import
+                css
               </PrismCode>
             </pre>
             <pre>
               <PrismCode className="language-jsx">
-                @import "~video-react/styles/scss/video-react"; // or import
-                scss
+                @import "~video-react/styles/scss/video-react"; scss
               </PrismCode>
             </pre>
             <pre>

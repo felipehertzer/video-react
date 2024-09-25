@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap'
 
 const ComponentLink = (props) => (

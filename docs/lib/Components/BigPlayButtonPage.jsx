@@ -1,10 +1,8 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import BigPlayButtonExample from '../examples/BigPlayButton.jsx'
-const BigPlayButtonExampleSource = require('!!raw-loader!../examples/BigPlayButton.jsx')
+import BigPlayButtonExampleSource from '../examples/BigPlayButton.jsx?raw'
 
 export default class BigPlayButtonPage extends React.Component {
   render() {

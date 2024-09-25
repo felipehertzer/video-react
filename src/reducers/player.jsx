@@ -25,12 +25,12 @@ import {
   ACTIVATE_TEXT_TRACK,
   RESIZE,
   ERROR,
-} from '../actions/video'
+} from '../actions/video.jsx'
 import {
   FULLSCREEN_CHANGE,
   PLAYER_ACTIVATE,
   USER_ACTIVATE,
-} from '../actions/player'
+} from '../actions/player.jsx'
 
 const initialState = {
   currentSrc: null,

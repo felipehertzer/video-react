@@ -1,5 +1,5 @@
-import player from './player'
-import operation from './operation'
+import player from './player.jsx'
+import operation from './operation.jsx'
 
 export default function (state = {}, action) {
   return {

@@ -1,11 +1,9 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import ControlBarExample from '../examples/ControlBar.jsx'
 
-const ControlBarExampleSource = require('!!raw-loader!../examples/ControlBar.jsx')
+import ControlBarExampleSource from '../examples/ControlBar.jsx?raw'
 
 export default class ControlBarPage extends React.Component {
   render() {

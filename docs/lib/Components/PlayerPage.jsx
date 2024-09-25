@@ -1,4 +1,3 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
 import { Table } from 'reactstrap'
@@ -6,8 +5,8 @@ import Helmet from 'react-helmet'
 import PlayerExample from '../examples/Player.jsx'
 import PlayerControlExample from '../examples/PlayerControl.jsx'
 
-const PlayerExampleSource = require('!!raw-loader!../examples/Player.jsx')
-const PlayerControlExampleSource = require('!!raw-loader!../examples/PlayerControl.jsx')
+import PlayerExampleSource from '../examples/Player.jsx?raw'
+import PlayerControlExampleSource from '../examples/PlayerControl.jsx?raw'
 
 export default function PlayerPage() {
   return (

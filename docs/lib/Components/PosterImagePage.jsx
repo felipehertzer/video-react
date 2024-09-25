@@ -1,10 +1,8 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import { Button } from 'reactstrap'
 import Helmet from 'react-helmet'
 import PosterImageExample from '../examples/PosterImage.jsx'
-const PosterImageExampleSource = require('!!raw-loader!../examples/PosterImage.jsx')
+import PosterImageExampleSource from '../examples/PosterImage.jsx?raw'
 
 export default class PosterImagePage extends React.Component {
   render() {

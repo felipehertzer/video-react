@@ -1,6 +1,6 @@
 import deepFreeze from 'deep-freeze'
-import operation from '../../reducers/operation'
-import { OPERATE } from '../../actions/player'
+import operation from '../../reducers/operation.jsx'
+import { OPERATE } from '../../actions/player.jsx'
 
 describe('operation reducer', () => {
   it('should return the initial state', () => {
