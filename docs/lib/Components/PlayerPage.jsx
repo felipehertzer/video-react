@@ -1,7 +1,7 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
 import { Table } from 'reactstrap'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import PlayerExample from '../examples/Player.jsx'
 import PlayerControlExample from '../examples/PlayerControl.jsx'
 

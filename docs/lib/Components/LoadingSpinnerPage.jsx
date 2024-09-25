@@ -1,6 +1,6 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import LoadingSpinnerExample from '../examples/LoadingSpinner.jsx'
 import LoadingSpinnerExampleSource from '../examples/LoadingSpinner.jsx?raw'
 

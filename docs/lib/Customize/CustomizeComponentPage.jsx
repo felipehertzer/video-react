@@ -1,6 +1,6 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import CustomizeComponentExample from '../examples/CustomizeComponentExample.jsx'
 import DownloadButtonSource from '../examples/DownloadButton.jsx?raw'
 import CustomizeComponentExampleSource from '../examples/CustomizeComponentExample.jsx?raw'

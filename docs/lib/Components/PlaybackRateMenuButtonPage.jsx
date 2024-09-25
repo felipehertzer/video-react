@@ -1,6 +1,6 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import PlaybackRateMenuButtonExample from '../examples/PlaybackRateMenuButton.jsx'
 import PlaybackRateMenuButtonExampleSource from '../examples/PlaybackRateMenuButton.jsx?raw'
 

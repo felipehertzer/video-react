@@ -1,6 +1,6 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import BigPlayButtonExample from '../examples/BigPlayButton.jsx'
 import BigPlayButtonExampleSource from '../examples/BigPlayButton.jsx?raw'
 

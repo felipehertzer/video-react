@@ -1,7 +1,7 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
 import { Table, Alert } from 'reactstrap'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import ShortcutExample from '../examples/Shortcut.jsx'
 
 import ShortcutExampleSource from '../examples/Shortcut.jsx?raw'

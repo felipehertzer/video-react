@@ -1,6 +1,6 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import PosterImageExample from '../examples/PosterImage.jsx'
 import PosterImageExampleSource from '../examples/PosterImage.jsx?raw'
 

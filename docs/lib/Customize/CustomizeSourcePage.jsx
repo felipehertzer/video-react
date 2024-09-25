@@ -1,6 +1,6 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import CustomizeSourceExample from '../examples/CustomizeSource.jsx'
 import CustomizeSourceExampleSource from '../examples/CustomizeSource.jsx?raw'
 import HLSSourceSource from '../examples/HLSSource.jsx?raw'

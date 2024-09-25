@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container, Row, Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 export default () => {
   return (

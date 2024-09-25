@@ -1,6 +1,6 @@
 import React from 'react'
 import { PrismCode } from 'react-prism'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import ReplayControlExample from '../examples/ReplayControl.jsx'
 
 import ReplayControlExampleSource from '../examples/ReplayControl.jsx?raw'
