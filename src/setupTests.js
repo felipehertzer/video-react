@@ -1,14 +1,12 @@
-import { configure } from 'enzyme'
-import Adapter from '@cfaester/enzyme-adapter-react-18'
+import '@testing-library/jest-dom'
 
-configure({ adapter: new Adapter() })
-
-global.createSpyObj = (baseName, methodNames) => {
+// Global utility function to create spy objects, if needed
+global.createSpyObj = function (baseName, methodNames) {
   const obj = {}
 
-  for (let i = 0; i < methodNames.length; i += 1) {
-    obj[methodNames[i]] = jest.fn()
-  }
+  methodNames.forEach((method) => {
+    obj[method] = jest.fn() // Create Jest mock functions
+  })
 
   return obj
 }
