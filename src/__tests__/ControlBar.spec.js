@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ControlBar from '../components/control-bar/ControlBar'
+import ControlBar from '../components/control-bar/ControlBar.jsx'
 
 describe('ControlBar', () => {
   it('should render with "div" tag', () => {

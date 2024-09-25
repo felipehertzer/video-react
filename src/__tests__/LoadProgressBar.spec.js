@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import LoadProgressBar from '../components/control-bar/LoadProgressBar'
+import LoadProgressBar from '../components/control-bar/LoadProgressBar.jsx'
 
 describe('LoadProgressBar', () => {
   it('should render with "div" tag', () => {

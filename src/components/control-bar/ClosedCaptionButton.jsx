@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import MenuButton from '../menu/MenuButton'
+import MenuButton from '../menu/MenuButton.jsx'
 
 const propTypes = {
   player: PropTypes.object,

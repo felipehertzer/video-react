@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ForwardControl from '../components/control-bar/ForwardControl'
+import ForwardControl from '../components/control-bar/ForwardControl.jsx'
 
 describe('ForwardControl', () => {
   it('should render with "button" tag', () => {

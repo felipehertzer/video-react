@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import classNames from 'classnames'
 
-import PopupButton from '../popup/PopupButton'
-import VolumeBar from '../volume-control/VolumeBar'
+import PopupButton from '../popup/PopupButton.jsx'
+import VolumeBar from '../volume-control/VolumeBar.jsx'
 
 const propTypes = {
   player: PropTypes.object,

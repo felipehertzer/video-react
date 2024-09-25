@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import classNames from 'classnames'
 
-import Slider from '../Slider'
-import VolumeLevel from './VolumeLevel'
+import Slider from '../Slider.jsx'
+import VolumeLevel from './VolumeLevel.jsx'
 
 const propTypes = {
   actions: PropTypes.object,

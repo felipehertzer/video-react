@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Player from '../components/Player'
-import Bezel from '../components/Bezel'
+import Player from '../components/Player.jsx'
+import Bezel from '../components/Bezel.jsx'
 
 describe('Bezel', () => {
   it('should not render bezel by default', () => {

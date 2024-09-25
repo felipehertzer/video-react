@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import MenuItem from '../components/menu/MenuItem'
+import MenuItem from '../components/menu/MenuItem.jsx'
 
 const items = [1, 2, 3, 4].map((i) => ({
   label: `item${i}`,

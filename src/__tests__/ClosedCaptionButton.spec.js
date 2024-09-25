@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import ClosedCaptionButton from '../components/control-bar/ClosedCaptionButton'
-import MenuButton from '../components/menu/MenuButton'
+import ClosedCaptionButton from '../components/control-bar/ClosedCaptionButton.jsx'
+import MenuButton from '../components/menu/MenuButton.jsx'
 
 const playerState = {
   hasStarted: false,

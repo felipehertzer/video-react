@@ -1,4 +1,4 @@
-import ForwardReplayControl from './ForwardReplayControl'
+import ForwardReplayControl from './ForwardReplayControl.jsx'
 
 // Pass mode into parent function
 const ReplayControl = ForwardReplayControl('replay')

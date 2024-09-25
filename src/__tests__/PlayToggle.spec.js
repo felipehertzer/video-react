@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import PlayToggle from '../components/control-bar/PlayToggle'
+import PlayToggle from '../components/control-bar/PlayToggle.jsx'
 
 describe('PlayToggle', () => {
   it('should render with "button" tag', () => {

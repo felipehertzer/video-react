@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import classNames from 'classnames'
 
-import Slider from '../Slider'
-import PlayProgressBar from './PlayProgressBar'
-import LoadProgressBar from './LoadProgressBar'
-import MouseTimeDisplay from './MouseTimeDisplay'
+import Slider from '../Slider.jsx'
+import PlayProgressBar from './PlayProgressBar.jsx'
+import LoadProgressBar from './LoadProgressBar.jsx'
+import MouseTimeDisplay from './MouseTimeDisplay.jsx'
 import { formatTime } from '../../utils'
 
 const propTypes = {

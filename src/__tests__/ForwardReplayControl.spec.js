@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ForwardReplayControl from '../components/control-bar/ForwardReplayControl'
+import ForwardReplayControl from '../components/control-bar/ForwardReplayControl.jsx'
 
 describe('ForwardReplayControl', () => {
   it('should render with "button" tag', () => {

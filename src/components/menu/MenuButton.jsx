@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import Menu from './Menu'
-import MenuItem from './MenuItem'
-import ClickableComponent from '../ClickableComponent'
+import Menu from './Menu.jsx'
+import MenuItem from './MenuItem.jsx'
+import ClickableComponent from '../ClickableComponent.jsx'
 
 const propTypes = {
   inline: PropTypes.bool,

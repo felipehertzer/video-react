@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 
 import * as Dom from '../../utils/dom'
-import SeekBar from './SeekBar'
+import SeekBar from './SeekBar.jsx'
 
 const propTypes = {
   player: PropTypes.object,

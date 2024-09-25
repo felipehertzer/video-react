@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import classNames from 'classnames'
-import ClickableComponent from '../ClickableComponent'
-import Popup from './Popup'
+import ClickableComponent from '../ClickableComponent.jsx'
+import Popup from './Popup.jsx'
 
 const propTypes = {
   inline: PropTypes.bool,

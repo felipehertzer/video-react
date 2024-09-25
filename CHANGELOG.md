@@ -199,7 +199,7 @@ Fixed #97: Uncaught ReferenceError: babelHelpers is not defined
 
 - Merged PR #81 by Roy Art(@rart): Allow the hosting App to provide the store for the player to use
 - Merged PR #92 by Chase Maier(@chasemaier): Add type="button" to prevent form submit
-- Merged PR #85 by Anton Kulakov(@kulakowka): Fixed typo in Player.js
+- Merged PR #85 by Anton Kulakov(@kulakowka): Fixed typo in Player.jsx
 - Merged PR #64 by Mihail Smolin(@Soulfull): fix remove event listener
 - Improvement: Ability to set element id #90
 
@@ -316,7 +316,7 @@ Fixed issue #11 Make sure the children of Video can get video object
 ## [0.6.3](https://github.com/video-react/video-react/compare/0.6.2...v0.6.3) (2017-02-11)
 
 Fixed issue #8 Spinner + Play Both Apear when no source
-Merged  #9 Display LoadingSpinner.js only if the player has started
+Merged  #9 Display LoadingSpinner.jsx only if the player has started
 Fixed tests
 
 <a name="0.6.2"></a>

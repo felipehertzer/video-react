@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import FullscreenToggle from '../components/control-bar/FullscreenToggle'
+import FullscreenToggle from '../components/control-bar/FullscreenToggle.jsx'
 
 describe('FullscreenToggle', () => {
   it('should render with "button" tag', () => {

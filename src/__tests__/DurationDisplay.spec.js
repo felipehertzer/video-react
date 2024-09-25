@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import DurationDisplay from '../components/time-controls/DurationDisplay'
+import DurationDisplay from '../components/time-controls/DurationDisplay.jsx'
 
 describe('DurationDisplay', () => {
   it('should render with "div" tag', () => {

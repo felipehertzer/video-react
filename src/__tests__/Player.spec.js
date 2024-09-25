@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Player from '../components/Player'
+import Player from '../components/Player.jsx'
 
 describe('Player', () => {
   it('should render with "div" tag', () => {

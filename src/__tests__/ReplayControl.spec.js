@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ReplayControl from '../components/control-bar/ReplayControl'
+import ReplayControl from '../components/control-bar/ReplayControl.jsx'
 
 describe('ReplayControl', () => {
   it('should render with "button" tag', () => {

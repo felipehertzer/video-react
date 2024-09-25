@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PlaybackRateMenuButton from './PlaybackRateMenuButton'
+import PlaybackRateMenuButton from './PlaybackRateMenuButton.jsx'
 import { deprecatedWarning } from '../../utils'
 
 export default class PlaybackRate extends Component {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import BigPlayButton from '../components/BigPlayButton'
+import BigPlayButton from '../components/BigPlayButton.jsx'
 
 describe('BigPlayButton', () => {
   it('should render with "button" tag', () => {
