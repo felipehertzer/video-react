@@ -1,26 +1,26 @@
-import React from 'react';
-import { Route, IndexRoute, IndexRedirect } from 'react-router';
-import Home from './Home';
-import NotFound from './NotFound';
-import Components from './Components';
-import UI from './UI';
-import PlayerPage from './Components/PlayerPage';
-import ShortcutPage from './Components/ShortcutPage';
-import BigPlayButtonPage from './Components/BigPlayButtonPage';
-import PosterImagePage from './Components/PosterImagePage';
-import LoadingSpinnerPage from './Components/LoadingSpinnerPage';
-import ControlBarPage from './Components/ControlBarPage';
-import PlayTogglePage from './Components/PlayTogglePage';
-import ForwardControlPage from './Components/ForwardControlPage';
-import ReplayControlPage from './Components/ReplayControlPage';
-import VolumeMenuButtonPage from './Components/VolumeMenuButtonPage';
-import PlaybackRateMenuButtonPage from './Components/PlaybackRateMenuButtonPage';
-import CaptionedVideoPage from './Components/CaptionedVideoPage';
+import React from 'react'
+import { Route, IndexRoute, IndexRedirect } from 'react-router'
+import Home from './Home/index.jsx'
+import NotFound from './NotFound/index.jsx'
+import Components from './Components/index.jsx'
+import UI from './UI/index.jsx'
+import PlayerPage from './Components/PlayerPage.jsx'
+import ShortcutPage from './Components/ShortcutPage.jsx'
+import BigPlayButtonPage from './Components/BigPlayButtonPage.jsx'
+import PosterImagePage from './Components/PosterImagePage.jsx'
+import LoadingSpinnerPage from './Components/LoadingSpinnerPage.jsx'
+import ControlBarPage from './Components/ControlBarPage.jsx'
+import PlayTogglePage from './Components/PlayTogglePage.jsx'
+import ForwardControlPage from './Components/ForwardControlPage.jsx'
+import ReplayControlPage from './Components/ReplayControlPage.jsx'
+import VolumeMenuButtonPage from './Components/VolumeMenuButtonPage.jsx'
+import PlaybackRateMenuButtonPage from './Components/PlaybackRateMenuButtonPage.jsx'
+import CaptionedVideoPage from './Components/CaptionedVideoPage.jsx'
 
-import Customize from './Customize';
-import EnableDisableComponentPage from './Customize/EnableDisableComponentPage';
-import CustomizeComponentPage from './Customize/CustomizeComponentPage';
-import CustomizeSourcePage from './Customize/CustomizeSourcePage';
+import Customize from './Customize/index.jsx'
+import EnableDisableComponentPage from './Customize/EnableDisableComponentPage.jsx'
+import CustomizeComponentPage from './Customize/CustomizeComponentPage.jsx'
+import CustomizeSourcePage from './Customize/CustomizeSourcePage.jsx'
 
 const routes = (
   <Route path="/" component={UI.Layout}>
@@ -55,6 +55,6 @@ const routes = (
     </Route>
     <Route path="*" component={NotFound} />
   </Route>
-);
+)
 
-export default routes;
+export default routes

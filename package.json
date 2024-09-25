@@ -10,16 +10,16 @@
     "test:watch": "BABEL_ENV=test jest --watch",
     "test:coverage": "BABEL_ENV=test jest --coverage",
     "start": "cross-env NODE_OPTIONS=\"--openssl-legacy-provider\" webpack-dev-server --watch",
-    "build-docs": "cross-env WEBPACK_BUILD=production NODE_OPTIONS=\"--openssl-legacy-provider\" webpack --progress --colors",
+    "build-docs": "cross-env WEBPACK_BUILD=production NODE_OPTIONS=\"--openssl-legacy-provider\" webpack --progress",
     "build": "rollup -c",
     "prebuild": "cross-env BABEL_ENV=lib-dir babel src --out-dir lib --ignore src/__tests__/",
-    "create-release": "npm test && sh ./scripts/release",
+    "create-release": "yarn test && sh ./scripts/release",
     "create-major": "sh ./scripts/release major",
     "create-minor": "sh ./scripts/release minor",
     "create-patch": "sh ./scripts/release patch",
-    "publish-release": "npm test && sh ./scripts/publish",
-    "lint": "biome lint --write ./src",
-    "format": "biome format --write ./src"
+    "publish-release": "yarn test && sh ./scripts/publish",
+    "lint": "biome lint --write .",
+    "format": "biome format --write"
   },
   "husky": {
     "hooks": {
@@ -28,7 +28,7 @@
   },
   "lint-staged": {
     "**/*.{js,css,md}": [
-      "npm run format-one",
+      "yarn format",
       "git add"
     ]
   },
@@ -70,9 +70,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/video-react/video-react/issues"
+    "url": "https://github.com/felipehertzer/video-react/issues"
   },
-  "homepage": "https://github.com/video-react/video-react#readme",
+  "homepage": "https://github.com/felipehertzer/video-react#readme",
   "tonicExampleFilename": "tonic-example.js",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",

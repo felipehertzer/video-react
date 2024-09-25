@@ -1,11 +1,11 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import babel from '@rollup/plugin-babel';
-import sass from 'rollup-plugin-sass';
-import pkg from './package.json' with { "type": "json" };
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import babel from '@rollup/plugin-babel'
+import sass from 'rollup-plugin-sass'
+import pkg from './package.json' with { type: 'json' }
 
-const peerDependencies = Object.keys(pkg.peerDependencies || {});
-const dependencies = Object.keys(pkg.dependencies || {});
+const peerDependencies = Object.keys(pkg.peerDependencies || {})
+const dependencies = Object.keys(pkg.dependencies || {})
 
 function baseConfig() {
   return {
@@ -13,11 +13,11 @@ function baseConfig() {
     external: peerDependencies.concat(dependencies),
     plugins: [
       sass({
-        output: 'dist/video-react.css'
+        output: 'dist/video-react.css',
       }),
       nodeResolve({
         browser: true,
-        preferBuiltins: false
+        preferBuiltins: false,
       }),
       commonjs(),
       babel({
@@ -30,14 +30,14 @@ function baseConfig() {
               loose: true,
               shippedProposals: true,
               modules: false,
-              targets: '> 0.25%, not dead, ie 11'
-            }
+              targets: '> 0.25%, not dead, ie 11',
+            },
           ],
-          '@babel/preset-react'
-        ]
-      })
-    ]
-  };
+          '@babel/preset-react',
+        ],
+      }),
+    ],
+  }
 }
 
 // CommonJS and ES Module builds
@@ -48,17 +48,15 @@ const libConfig = {
       sourcemap: true,
       name: 'VideoReact',
       file: 'dist/video-react.cjs.js',
-      format: 'cjs' // CommonJS format
+      format: 'cjs', // CommonJS format
     },
     {
       sourcemap: true,
       name: 'VideoReact',
       file: 'dist/video-react.es.js',
-      format: 'es' // ES Module format
-    }
-  ]
-};
+      format: 'es', // ES Module format
+    },
+  ],
+}
 
-export default [
-  libConfig
-];
+export default [libConfig]

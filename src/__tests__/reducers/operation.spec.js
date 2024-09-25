@@ -1,6 +1,6 @@
-import deepFreeze from 'deep-freeze';
-import operation from '../../reducers/operation';
-import { OPERATE } from '../../actions/player';
+import deepFreeze from 'deep-freeze'
+import operation from '../../reducers/operation'
+import { OPERATE } from '../../actions/player'
 
 describe('operation reducer', () => {
   it('should return the initial state', () => {
@@ -11,11 +11,11 @@ describe('operation reducer', () => {
         action: '',
         source: '',
       },
-    };
+    }
 
     // Call the reducer with undefined state and an empty action
-    expect(operation(undefined, {})).toEqual(expectedInitialState);
-  });
+    expect(operation(undefined, {})).toEqual(expectedInitialState)
+  })
 
   it('should increase the count by action', () => {
     // Initial state before the action
@@ -25,7 +25,7 @@ describe('operation reducer', () => {
         action: '',
         source: '',
       },
-    };
+    }
 
     // Action to increment the count
     const action = {
@@ -34,7 +34,7 @@ describe('operation reducer', () => {
         action: '',
         source: '',
       },
-    };
+    }
 
     // Expected state after the action is applied
     const stateAfter = {
@@ -43,15 +43,15 @@ describe('operation reducer', () => {
         action: '',
         source: '',
       },
-    };
+    }
 
     // Ensure the state and action are frozen for immutability
-    deepFreeze(stateBefore);
-    deepFreeze(action);
+    deepFreeze(stateBefore)
+    deepFreeze(action)
 
     // Check if the reducer produces the expected state
-    expect(operation(stateBefore, action)).toEqual(stateAfter);
-  });
+    expect(operation(stateBefore, action)).toEqual(stateAfter)
+  })
 
   it('should increase the count by 100 when the action is called 100 times', () => {
     // Initial state before any action is applied
@@ -61,7 +61,7 @@ describe('operation reducer', () => {
         action: '',
         source: '',
       },
-    };
+    }
 
     // Action that will be dispatched multiple times
     const action = {
@@ -70,7 +70,7 @@ describe('operation reducer', () => {
         action: '',
         source: '',
       },
-    };
+    }
 
     // Expected state after the action is applied 100 times
     const stateAfter = {
@@ -79,19 +79,19 @@ describe('operation reducer', () => {
         action: '',
         source: '',
       },
-    };
+    }
 
     // Ensure the state and action are frozen for immutability
-    deepFreeze(stateBefore);
-    deepFreeze(action);
+    deepFreeze(stateBefore)
+    deepFreeze(action)
 
     // Apply the action 100 times
-    let state = stateBefore;
+    let state = stateBefore
     for (let i = 0; i < 100; i++) {
-      state = operation(state, action);
+      state = operation(state, action)
     }
 
     // Check if the reducer produces the expected state after 100 iterations
-    expect(state).toEqual(stateAfter);
-  });
-});
+    expect(state).toEqual(stateAfter)
+  })
+})
